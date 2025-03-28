@@ -18,7 +18,8 @@ RUN apt-get update \
 ENV CALIBRE_VERSION 6.4.0
 ENV X86_64_URL "https://download.calibre-ebook.com/${CALIBRE_VERSION}/calibre-${CALIBRE_VERSION}-x86_64.txz"
 ENV AARCH64_URL "https://download.calibre-ebook.com/${CALIBRE_VERSION}/calibre-${CALIBRE_VERSION}-arm64.txz"
-ENV CALIBRE_URL "https://download.calibre-ebook.com/${CALIBRE_VERSION}/calibre-${CALIBRE_VERSION}-arm64.txz"
+# ENV CALIBRE_URL "https://download.calibre-ebook.com/${CALIBRE_VERSION}/calibre-${CALIBRE_VERSION}-arm64.txz"
+ENV CALIBRE_URL "${X86_64_URL}"
 RUN mkdir -p /opt/calibre \
  && wget -nv -O /tmp/calibre.txz "${CALIBRE_URL}" \
  && tar -xJf /tmp/calibre.txz -C /opt/calibre
